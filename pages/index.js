@@ -1,11 +1,8 @@
-import SignIn from "../components/SignIn";
-import SignInWithPhone from "../components/SignInWithPhone";
+import Home1 from "../components/home";
 export default function Home() {
   return (
     <div>
-
-      <SignIn />
-      <SignInWithPhone />
+        <Home1 />
     </div>
-  )
+  );
 }
