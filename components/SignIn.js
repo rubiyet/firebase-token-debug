@@ -31,6 +31,8 @@ export default function SignIn() {
   const handleClear = () => {
     sessionStorage.removeItem("Token");
     setToken("");
+    setEmail("");
+    setPassword("");
   }
 
   useEffect(() => {
@@ -73,14 +75,14 @@ export default function SignIn() {
                   <button
                     type="submit"
                     onClick={handleSignUp}
-                    className="rounded border border-1"
+                    className="rounded border border-1 bg-primary text-white"
                   >
                     Sign In
                   </button>
                   <button
                     type="submit"
                     onClick={handleClear}
-                    className="rounded border border-1"
+                    className="rounded border border-1 bg-primary text-white p-1"
                   >
                     Clear
                   </button>
