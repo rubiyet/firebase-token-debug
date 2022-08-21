@@ -10,9 +10,12 @@ export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [token, setToken] = useState();
+  const [popOver, setPopOver] = useState(false)
 
   const tokenCopy = (e) => {
+    setPopOver(false);
     navigator.clipboard.writeText(token);
+    setPopOver(true);
   };
 
   const handleSignUp = async () => {
@@ -29,6 +32,15 @@ export default function SignIn() {
     sessionStorage.removeItem("Token");
     setToken("");
   }
+
+  useEffect(() => {
+    setInterval(() => {
+      if (popOver == false) {
+        setPopOver(true);
+      }
+      setPopOver(false)
+    }, 5000)
+  });
 
   return (
     <>
@@ -75,20 +87,24 @@ export default function SignIn() {
                 </div>
               </div>
             </div>
-            <div className="d-flex justify-content-start pt-3">
-              <span>Token</span>            <button
-                type="submit"
-                onClick={tokenCopy}
-                className="border border-0 bg-white"
-              >
+            <div className="d-flex justify-content-between pt-3">
+              <div>
+                <span>Token</span>
+                <button
+                  type="submit"
+                  onClick={tokenCopy}
+                  className="border border-0 bg-white"
+                >
                   <Image
                     src="/copy.svg"
                     alt="logo"
                     width={15}
                     height={15}
                     className="rounded-md"
-                />
-              </button>
+                  />
+                </button>
+              </div>
+              {popOver ? "Token Copyed" : ""}
             </div>
             <div className="d-flex justify-content-center pt-1">
               <div>
