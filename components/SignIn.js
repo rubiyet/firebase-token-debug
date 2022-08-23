@@ -35,7 +35,7 @@ export default function SignIn(props) {
         <div className="col-5 d-flex justify-content-end pb-3">
           <span>Email:</span>
         </div>
-        <div className="col-7">            
+        <div className="col-7">
           <input
             type="email"
             placeholder="Email"
@@ -47,7 +47,7 @@ export default function SignIn(props) {
         <div className="col-5 d-flex justify-content-end pb-3">
           <span>Password:</span>
         </div>
-        <div className="col-7">            
+        <div className="col-7">
           <input
             type="Password"
             placeholder="Password"
@@ -58,22 +58,22 @@ export default function SignIn(props) {
         </div>
         <div className="col-3"></div>
         <div className="col-9 d-flex justify-content-evenly">
-            <button
-              type="submit"
-              onClick={handleSignUp}
-              className="rounded border border-1 btn btn-success text-white"
-            >
-              Sign In
-            </button>
-            <button
-              type="submit"
-              onClick={handleClear}
-              className="rounded border border-1 btn btn-success text-white"
-            >
-              Clear
-            </button>
-          </div>
-  </div>
+          <button
+            type="submit"
+            onClick={handleSignUp}
+            className="rounded border border-1 btn btn-success text-white"
+          >
+            Sign In
+          </button>
+          <button
+            type="submit"
+            onClick={handleClear}
+            className="rounded border border-1 btn btn-success text-white"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
     </>
   );
 }

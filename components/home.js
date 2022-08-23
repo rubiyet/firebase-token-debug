@@ -43,13 +43,13 @@ export default function Home() {
         <div className="row">
           <div className="col-6">
             <div className="d-flex justify-content-center">
-              <span className="fw-semibold">Email/Password</span> &emsp;
+              <span className="fw-semibold">(User) Email/Password</span> &emsp;
               <label className={`${styles.switch}`}>
                 <input type="checkbox" onChange={showOption} />
                 <span className={`${styles.sliderRound}`}></span>
               </label>{" "}
               &emsp;
-              <span className="fw-semibold">Phone</span>
+              <span className="fw-semibold">Phone (Customer)</span>
             </div>
             <div className="p-4 d-flex justify-content-center">
               {hide ? (
