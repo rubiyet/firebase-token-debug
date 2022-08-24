@@ -34,7 +34,7 @@ export default function SignInWithPhone(props) {
       let appVerifier = window.recaptchaVerifier;
       signInWithPhoneNumber(
         authentication,
-        countyCode,
+        countyCodeIWithPhoneNumber,
         appVerifier
       )
         .then((confirmationResult) => {
@@ -62,9 +62,9 @@ export default function SignInWithPhone(props) {
         });
   }
 
-  // useEffect(() => {
-  //   setCountyCodeIWithPhoneNumber(countyCode + phoneNumber);
-  // },[countyCode,phoneNumber]);
+  useEffect(() => {
+    setCountyCodeIWithPhoneNumber(countyCode + phoneNumber);
+  },[countyCode,phoneNumber]);
 
   return (
     <>
@@ -72,20 +72,20 @@ export default function SignInWithPhone(props) {
         <div className="col-4 d-flex justify-content-end pb-3">
           <span>Phone:</span>
         </div>
-        {/* <div className="col-2 d-flex justify-content-end pb-3">
+        <div className="col-2 d-flex justify-content-end pb-3">
           <input
             type="tel"
             onChange={(e) => setCountyCode(e.target.value)}
             value={countyCode}
             className={`${styles.countryCodeBox} border-0 border-bottom`}
           />
-        </div> */}
+        </div>
         <div className="col-6">
           <input
             type="tel"
             placeholder="Phone"
-            onChange={(e) => setCountyCode(e.target.value)}
-            value={countyCode}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            value={phoneNumber}
             className="border-0 border-bottom"
           />
         </div>
